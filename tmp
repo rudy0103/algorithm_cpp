@@ -1,9 +1,18 @@
 #include <stdio.h>
+#include <algorithm>
+#include <vector>
+#include <time.h>
 
 using namespace std;
 
 int main(){
     freopen("input.txt", "rt", stdin);
+    clock_t start, end;
+    double result;
+    start = clock();
+
+
+    printf("\ntime: %f",result);
 
 
     return 0;
