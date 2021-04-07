@@ -1,4 +1,4 @@
-// 25.말아톤
+// 26.말아톤
 #include <stdio.h>
 #include <algorithm>
 #include <vector>

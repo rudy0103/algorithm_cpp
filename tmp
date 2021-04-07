@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <algorithm>
 #include <vector>
@@ -6,12 +7,15 @@
 using namespace std;
 
 int main(){
-    freopen("input.txt", "rt", stdin);
     clock_t start, end;
     double result;
     start = clock();
+    freopen("input.txt", "rt", stdin);
+    //----------------------------------------------------------------------------------------------------------
 
 
+
+    //------------------------------------------------------------------------------------------------------------
     printf("\ntime: %f",result);
 
 
