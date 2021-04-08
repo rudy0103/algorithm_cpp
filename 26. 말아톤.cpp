@@ -38,9 +38,9 @@ int main(){
 
 
 
-    end = clock();
-    result = (double)(end - start);
-
+    //------------------------------------------------------------------------------------------------------------
+    // end = clock();
+    // result = (double)(end - start);
     // printf("\ntime: %f",result);
 
     return 0;

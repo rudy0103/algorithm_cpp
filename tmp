@@ -16,7 +16,9 @@ int main(){
 
 
     //------------------------------------------------------------------------------------------------------------
-    printf("\ntime: %f",result);
+    // end = clock();
+    // result = (double)(end - start);
+    // printf("\ntime: %f",result);
 
 
     return 0;
