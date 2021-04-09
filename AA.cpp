@@ -1,11 +1,11 @@
-//35. Special Sort(구글 인터뷰)
-
+// 40. 교집합
 #include <stdio.h>
-#include <algorithm>
-#include <vector>
 #include <time.h>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
+
 
 int main(){
     clock_t start, end;
@@ -13,30 +13,78 @@ int main(){
     start = clock();
     // freopen("input.txt", "rt", stdin);
     //----------------------------------------------------------------------------------------------------------
-    int n,i,j, tmp, idx, a[101];
-    scanf("%d",&n);
+    int n,m,min;
+    int i,j,k,tmp,idx;
+    int p1 = 0,p2 = 0,p3 = 0;
 
-    for(i = 0 ; i < n ; i ++){
+    scanf("%d",&n);
+    vector<int> a(n);
+    for(i = 0 ; i<n; i++){
         scanf("%d",&a[i]);
     }
 
-    for( i = 1; i < n ;i++){
-        if(a[i] < 0 ){
-            for(j = i -1 ; j >=0 ; j--){
-                if(a[j] > 0){
-                    tmp = a[i];
-                    a[i] = a[j];
-                    a[j] = tmp;
-                    i--;
-                }
-            }
+    
+    scanf("%d",&m);
+    if(n<m) min = n;
+    else min = m;
 
+    vector<int> b(m), c(min);
+    for(i = 0 ; i<m; i++){
+        scanf("%d",&b[i]);
+    }
+
+    // k=0;
+    // for(i = 0; i < n; i++){
+    //     for(j = 0 ; j < m; j++){
+
+    //         if(a[i]==b[j]){
+    //             c[k]=a[i];
+    //             k++;
+    //         }
+    //     }
+    // }
+
+    sort(a.begin(),a.end());
+    sort(b.begin(),b.end());
+
+
+    while(1){
+        if(a[p1] == b[p2]){
+            c[p3++]=a[p1];
+            p1++;
+            p2++;
         }
+        else if(a[p1] > b[p2]) p2++;
+        else p1++;
+
+        if(p1>=n || p2 >=m) break;
     }
 
-    for(i = 0 ;i < n ; i++){
-        printf("%d ",a[i]);
+    // for(i = 0; i < k ; i++){
+    //     tmp=c[i];
+    //     idx = i;
+    //     for(j = i-1; j >=0; j--){
+    //         if(c[j] > c[i]){
+    //             idx = j;
+    //         }
+    //     }
+    //     for(j = i-1; j>=idx;j--){
+    //         c[j+1]=c[j];
+    //     }
+    //     c[idx]=tmp;
+
+    // }
+    
+    
+    for(i = 0 ; i < p3; i++){
+        printf("%d ",c[i]);
     }
+
+    
+
+
+    
+
 
 
     //------------------------------------------------------------------------------------------------------------
