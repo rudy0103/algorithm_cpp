@@ -33,7 +33,7 @@ int main(){
     freopen("input.txt", "rt", stdin);
     //----------------------------------------------------------------------------------------------------------
     int n, m, i, j;
-    int min,max, tmp;
+    int max;
     int a[1001];
     int sum = 0 ,avr;
     int left, right,mid;
