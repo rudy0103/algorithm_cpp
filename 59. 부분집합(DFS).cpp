@@ -1,4 +1,4 @@
-// 58. 이진트리 깊이우선탐색(DFS)
+// 59. 부분집합(DFS)
 #include <stdio.h>
 #include <time.h>
 using namespace std;
