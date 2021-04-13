@@ -1,4 +1,4 @@
-// 51 Ugly Numbers
+// 51. Ugly Numbers
 
 #include <stdio.h>
 #include <time.h>
