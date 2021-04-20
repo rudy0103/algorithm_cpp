@@ -1,6 +1,5 @@
 // 71. 송아지 찾기 (BFS : 상태트리탐색)
 
-
 #include <stdio.h>
 #include <time.h>
 #include <deque>
@@ -45,15 +44,10 @@ int main(){
 
     printf("%d",cnt);
     
-
-
-
-
-
     //------------------------------------------------------------------------------------------------------------
-    end = clock();
-    result = (double)(end - start)/CLOCKS_PER_SEC;
-    printf("\ntime: %fs",result);
+    // end = clock();
+    // result = (double)(end - start)/CLOCKS_PER_SEC;
+    // printf("\ntime: %fs",result);
 
 
     return 0;
