@@ -1,9 +1,9 @@
-// 72. 공주 구하기 (큐 자로구조로 해결)
+// 73. 최대힙(priority_queue 우선순위 큐)
 
-
-#include <stdio.h>
-#include <time.h>
-#include <queue>
+#include<stdio.h>
+#include<time.h>
+#include<queue>
+#include<algorithm>
 
 using namespace std;
 
@@ -13,27 +13,29 @@ int main(){
     start = clock();
     // freopen("input.txt", "rt", stdin);
     //----------------------------------------------------------------------------------------------------------
-    int n,k,i,j;
-    int tmp;
-    scanf("%d %d",&n,&k);
-    queue<int> Q;
+    int n,i;
+    int num;
+    priority_queue<int> pQ;
 
-    for( i =1; i<=n ; i++){
-        Q.push(i);
-    }
-    // printf("%d %d",n,k);
-
-    while (!Q.empty())
-    {
-        for(i = 1 ; i<=k ; i++){
-            tmp = Q.front(); 
-            Q.pop();
-            if(i!=k) Q.push(tmp);
+    while(true){
+        scanf("%d",&num);
+        if(num == 0){
+            if(pQ.empty()){
+                printf("-1");
+                break;
+            }
+            printf("%d\n",pQ.top());
+            pQ.pop();
+        }
+        else if (num == -1){
+            return 0;
+        }
+        else{
+            pQ.push(num);
         }
     }
-
-    printf("%d",tmp);
     
+
 
 
     //------------------------------------------------------------------------------------------------------------
