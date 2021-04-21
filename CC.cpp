@@ -1,34 +1,43 @@
 #include<stdio.h>
-#include<vector>
-#include<queue>
 #include<algorithm>
+#include<queue>
+#include<vector>
 using namespace std;
-int ch[10001], d[3]={1, -1, 5};
+struct Data{
+	int money;
+	int when;
+	Data(int a, int b){
+		money=a;
+		when=b;
+	}
+	bool operator<(const Data &b)const{
+		return when>b.when;
+	}	
+};
 int main(){
 	freopen("input.txt", "rt", stdin);
-	int s, e, x, pos, i;
-	queue<int> Q;
-	scanf("%d %d", &s, &e);
-	ch[s]=1;
-	Q.push(s);
-	while(!Q.empty()){
-		x=Q.front();
-		Q.pop();
-		for(i=0; i<3; i++){
-			pos=x+d[i];
-			if(pos<=0 || pos>10000) continue;
-			if(pos==e){
-				printf("%d\n", ch[x]);
-				exit(0);
-			}
-			if(ch[pos]==0){
-				ch[pos]=ch[x]+1;
-				Q.push(pos);
-			}
+	int n, i, j, a, b, res=0, max=-2147000000;	
+	vector<Data> T;
+	priority_queue<int> pQ;
+	scanf("%d", &n);
+	for(i=1; i<=n; i++){
+		scanf("%d %d", &a, &b);
+		T.push_back(Data(a, b));
+		if(b>max)
+			max=b;
+	}
+	sort(T.begin(), T.end());	
+	j=0;
+	for(i=max; i>=1; i--){	
+		for( ; j<n; j++){
+			if(T[j].when<i) break;			
+			pQ.push(T[j].money);
+		}
+		if(!pQ.empty()){
+			res+=pQ.top();
+			pQ.pop();
 		}
 	}
+	printf("%d\n",res);
 	return 0;
 }
-
-
-
