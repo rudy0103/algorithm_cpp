@@ -1,4 +1,4 @@
-//61. 특정 수 만들지(DFS: MS 인터뷰)
+//61. 특정 수 만들기(DFS: MS 인터뷰)
 
 #include<stdio.h>
 
