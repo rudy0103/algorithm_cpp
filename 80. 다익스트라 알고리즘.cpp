@@ -17,6 +17,7 @@ void dijkstra(int v){
     int d,c;
     int cost;
     pos=v;
+    ch[pos]=1;
 
     for(i = 0; i<map[v].size(); i++){
             d=map[v][i].first;
@@ -36,8 +37,7 @@ void dijkstra(int v){
         }
     }
 
-    ch[pos]=1;
-    if(dist[pos]!=2147000000) dijkstra(pos);
+    if(dist[pos]!=2147000000 && ch[pos]==0) dijkstra(pos);
 
 }
 

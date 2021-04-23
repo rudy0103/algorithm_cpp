@@ -1,8 +1,9 @@
-
+// 80.다익스트라 알고리즘 우선순위큐, 인접리스트로 구현
 #include<stdio.h>
 #include<time.h>
 #include<queue>
 #include<algorithm>
+#include<iostream>
 
 using namespace std;
 
@@ -54,6 +55,11 @@ int main(){
 
         }
 
+    }
+
+    for(i = 2; i<=n; i++){
+        if(dist[i] != 2147000000) cout<<i<<" : "<<dist[i]<<endl;
+        else cout<<i<<" : impossible"<<endl;
     }
 
 
