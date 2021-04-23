@@ -30,8 +30,6 @@ void DFS(int l,int s){
         }
 
     }
-
-
 }
 
 int main(){
