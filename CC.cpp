@@ -1,43 +1,72 @@
+//89. 토마토(BFS 활용)
+
 #include<stdio.h>
-#include<algorithm>
+#include<time.h>
+#include<iostream>
 #include<queue>
-#include<vector>
+
 using namespace std;
-struct Data{
-	int money;
-	int when;
-	Data(int a, int b){
-		money=a;
-		when=b;
-	}
-	bool operator<(const Data &b)const{
-		return when>b.when;
-	}	
-};
+
 int main(){
-	freopen("input.txt", "rt", stdin);
-	int n, i, j, a, b, res=0, max=-2147000000;	
-	vector<Data> T;
-	priority_queue<int> pQ;
-	scanf("%d", &n);
-	for(i=1; i<=n; i++){
-		scanf("%d %d", &a, &b);
-		T.push_back(Data(a, b));
-		if(b>max)
-			max=b;
-	}
-	sort(T.begin(), T.end());	
-	j=0;
-	for(i=max; i>=1; i--){	
-		for( ; j<n; j++){
-			if(T[j].when<i) break;			
-			pQ.push(T[j].money);
-		}
-		if(!pQ.empty()){
-			res+=pQ.top();
-			pQ.pop();
-		}
-	}
-	printf("%d\n",res);
-	return 0;
+    clock_t start, end;
+    double result;
+    start = clock();
+    freopen("input.txt", "rt", stdin);
+    //----------------------------------------------------------------------------------------------------------
+    queue<pair<int,int>> Q;
+
+    int m,n;
+    int i,j;
+    int dx[]={-1,0,1,0};
+    int dy[]={0,1,0,-1};
+    int map[1001][1001];
+    int x,y;
+    pair<int,int> p;
+    cin>>m>>n;
+
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            cin>>map[i][j];
+            if(map[i][j]==1){
+                Q.push(make_pair(i,j));
+            }
+        }
+    }
+
+    while (!Q.empty())
+    {
+        p=Q.front();
+        Q.pop();
+
+        for(i=0; i<4; i++){
+            x=p.first+dx[i];
+            y=p.second+dy[i];
+
+            if(x>=0 && x<n && y>=0 && y<m){
+                if(map[x][y]==0){
+                    map[x][y]=map[p.first][p.second]+1;
+                }else if (map[p.first][p.second]+1<map[x][y]){
+                    map[x][y]=map[p.first][p.second]+1;
+                }
+            }
+        }
+    }
+    
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            cout<<map[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    
+
+
+
+    //------------------------------------------------------------------------------------------------------------
+    // end = clock();
+    // result = (double)(end - start);
+    // printf("\ntime: %f",result);
+
+
+    return 0;
 }

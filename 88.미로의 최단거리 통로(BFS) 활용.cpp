@@ -5,9 +5,10 @@
 #include<iostream>
 #include<queue>
 
-int map[9][9];
-
 using namespace std;
+
+
+int map[9][9];
 
 int main(){
     clock_t start, end;
