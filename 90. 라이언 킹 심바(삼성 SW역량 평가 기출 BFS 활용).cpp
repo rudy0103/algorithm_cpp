@@ -2,7 +2,6 @@
 
 #include<stdio.h>
 #include<time.h>
-#include<vector>
 #include<queue>
 #include<iostream>
 
@@ -26,10 +25,18 @@ struct State{
         z=c;
     }
 
-    bool operator<(const State &b)const{
-        if(z!=b.z) return z>b.z;
-        if(x!=b.x) return x>b.x;
-        if(y!=b.y) return y>b.y;
+    bool operator<(const State &bb)const{
+        if(z!=bb.z) return z>bb.z;
+        if(x!=bb.x) return x>bb.x;
+        if(y!=bb.y) return y>bb.y;
+    }
+};
+
+struct Lion{
+    int x, y, s, ate;
+    void sizeUp(){
+        ate=0;
+        s++;
     }
 };
 
