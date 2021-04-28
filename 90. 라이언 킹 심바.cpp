@@ -1,8 +1,8 @@
+//90. 라이언 킹 심바
 #include<stdio.h>
 #include<algorithm>
 #include<queue>
 #include<iostream>
-#include<vector>
 using namespace std;
 int map[21][21], ch[21][21];
 int dx[]={1,0,-1,0};
