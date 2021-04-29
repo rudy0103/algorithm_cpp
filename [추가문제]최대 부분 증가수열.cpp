@@ -12,7 +12,7 @@ int main(){
     clock_t start, end;
     double result;
     start = clock();
-    freopen("input.txt", "rt", stdin);
+    // freopen("input.txt", "rt", stdin);
     //----------------------------------------------------------------------------------------------------------
     ios_base::sync_with_stdio(false);
     int i,j, n;
@@ -24,9 +24,9 @@ int main(){
         cin>>a[i];
     }
     dy[1]=1;
-    dy[2]=1;
 
-    for(i=3; i <=n; i++){
+
+    for(i=2; i <=n; i++){
         max=0;
         for(j=i;j>=1;j--){
             if(a[i]>a[j]){

@@ -27,7 +27,7 @@ int main(){
     clock_t start, end;
     double result;
     start = clock();
-    freopen("input.txt", "rt", stdin);
+    // freopen("input.txt", "rt", stdin);
     //----------------------------------------------------------------------------------------------------------
     ios_base::sync_with_stdio(false);
 
@@ -37,7 +37,7 @@ int main(){
     int max;
     int res=0;
     
-    vector<Stone> vec(n);
+    vector<Stone> vec(n+1);
 
     for(i=1;i<=n;i++){
         cin>>a>>h>>w;
@@ -76,9 +76,7 @@ int main(){
     }
 
     // for(i=1; i<=n; i++) cout<<dy[i]<<" ";
-
-    // printf("%d",n);
-    // cout<<n;
+    cout<<res;
     //------------------------------------------------------------------------------------------------------------
     // end = clock();
     // result = (double)(end - start);
