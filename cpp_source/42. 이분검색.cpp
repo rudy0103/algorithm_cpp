@@ -9,7 +9,7 @@ int main(){
     clock_t start, end;
     double result;
     start = clock();
-    // freopen("input.txt", "rt", stdin);
+    freopen("input.txt", "rt", stdin);
     //----------------------------------------------------------------------------------------------------------
     int n,m;
     int i, idx, left,right;

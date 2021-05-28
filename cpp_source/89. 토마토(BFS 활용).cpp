@@ -48,9 +48,6 @@ int main(){
                 if(map[x][y]==0){
                     map[x][y]=map[p.first][p.second]+1;
                     Q.push(make_pair(x,y));
-                }else if (map[p.first][p.second]+1<map[x][y]){
-                    map[x][y]=map[p.first][p.second]+1;
-                    Q.push(make_pair(x,y));
                 }
             }
         }
