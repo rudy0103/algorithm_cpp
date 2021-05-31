@@ -12,7 +12,11 @@ files=os.listdir(targetdir)
 in_txt=glob.glob("in*.txt")
 out_txt=glob.glob("out*.txt")
 pyfile=glob.glob("*.py")
-
+print(os.getcwd())
+print(in_txt)
+print(out_txt)
+print(pyfile)
+# time.sleep(10)
 
 i=0
 
