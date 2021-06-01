@@ -1,5 +1,5 @@
 from sys import stdin as s
-# s=open("input.txt","rt")
+s=open("input.txt","rt")
 
 st=s.read().strip()
 
